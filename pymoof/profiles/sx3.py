@@ -126,6 +126,7 @@ class SX3Profile:
         ERRORS = "6acc5563-e631-4069-944d-b8ca7598ad50"
         WHEEL_SIZE = "6acc5564-e631-4069-944d-b8ca7598ad50"
         CLOCK = "6acc5567-e631-4069-944d-b8ca7598ad50"
+        BUTTON_STATES = "6acc5568-e631-4069-944d-b8ca7598ad50"
 
     class Sound(enum.Enum):
 
@@ -140,4 +141,13 @@ class SX3Profile:
         SERVICE_UUID = "6acc5580-e631-4069-944d-b8ca7598ad50"
 
         LIGHT_MODE = "6acc5581-e631-4069-944d-b8ca7598ad50"
+        LIGHT_STATE = "6acc5582-e631-4069-944d-b8ca7598ad50"
         SENSOR = "6acc5584-e631-4069-944d-b8ca7598ad50"
+
+    class Maintenance(enum.Enum):
+
+        SERVICE_UUID = "6acc55c0-e631-4069-944d-b8ca7598ad50"
+
+        LOG_MODE = "6acc55c1-e631-4069-944d-b8ca7598ad50"
+        LOG_SIZE = "6acc55c2-e631-4069-944d-b8ca7598ad50"
+        LOG_BLOCK = "6acc55c3-e631-4069-944d-b8ca7598ad50"
