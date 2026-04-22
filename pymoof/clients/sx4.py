@@ -230,7 +230,7 @@ class SX4Client:
         result = await self._read(
             self._bike_profile.Movement.DISTANCE,
         )
-        return int.from_bytes(result, "little") / 10
+        return int.from_bytes(result, 'little') / 10
 
     async def get_power_level(self) -> int:
         """
@@ -245,7 +245,7 @@ class SX4Client:
         result = await self._read(
             self._bike_profile.Movement.POWER_LEVEL,
         )
-        return result
+        return int(result[0])
 
     async def get_sound_volume(self) -> int:
         """
@@ -260,7 +260,7 @@ class SX4Client:
         result = await self._read(
             self._bike_profile.Sound.SOUND_VOLUME,
         )
-        return result
+        return int(result[0])
 
     async def get_speed(self) -> int:
         """
@@ -275,7 +275,7 @@ class SX4Client:
         result = await self._read(
             self._bike_profile.Movement.SPEED,
         )
-        return int.from_bytes(result, "little")
+        return int(result[0])
 
     async def get_light_mode(self) -> int:
         """
@@ -288,6 +288,6 @@ class SX4Client:
         :return: N/A
         """
         result = await self._read(
-            self._bike_profile.Movement.SPEED,
+            self._bike_profile.Light.LIGHT_MODE,
         )
-        return result
+        return int(result[0])
