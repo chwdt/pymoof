@@ -246,7 +246,7 @@ class SX3Client:
         result = await self._read(
             self._bike_profile.Movement.POWER_LEVEL,
         )
-        return result
+        return int(result[0])
 
     async def get_frame_number(self) -> str:
         """
@@ -278,7 +278,7 @@ class SX3Client:
         result = await self._read(
             self._bike_profile.Sound.SOUND_VOLUME,
         )
-        return result
+        return int(result[0])
 
     async def get_speed(self) -> int:
         """
