@@ -19,7 +19,7 @@ requests = "^2.27.1"
 bleak = "^0.14.2"
 cryptography = "^36.0.1"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "^6.2.5"
 ipdb = "^0.13.9"
 pre-commit = "^2.17.0"
@@ -35,7 +35,7 @@ m2r2 = "^0.3.2"
 legacy_tox_ini="""
 [tox]
 isolated_build = True
-envlist = py39
+envlist = py311
 
 [testenv]
 deps =
