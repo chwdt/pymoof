@@ -308,4 +308,4 @@ class SX3Client:
         result = await self._read(
             self._bike_profile.Movement.SPEED,
         )
-        return result
+        return int(result[0])
