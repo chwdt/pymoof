@@ -152,3 +152,15 @@ async def test_sound_volume(crypto, bleak_client, client):
 async def test_get_speed(crypto, bleak_client, client):
     bleak_client.read_gatt_char.return_value = crypto.rencrypt((25).to_bytes(1))
     assert await client.get_speed() == 25
+
+
+@pytest.mark.asyncio
+async def test_get_light_mode(crypto, bleak_client, client):
+    bleak_client.read_gatt_char.return_value = crypto.rencrypt((1).to_bytes(1))
+    assert await client.get_light_mode() == 1
+
+
+@pytest.mark.asyncio
+async def test_get_lock_state(crypto, bleak_client, client):
+    bleak_client.read_gatt_char.return_value = crypto.rencrypt((LockState.UNLOCKED.value).to_bytes(1))
+    assert await client.get_lock_state() == LockState.UNLOCKED
